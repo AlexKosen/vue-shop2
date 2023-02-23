@@ -1,6 +1,6 @@
 <script>
 import TheHeader from '../components/headerSection/TheHeader.vue';
-import TheSlider from '../components/sliderSection/TheSliderSection.vue'
+import TheSlider from '../components/sliderSection/TheSlider.vue'
 import TheShopSection from '../components/shopSection/TheShopSection.vue';
 import TheAboutSection from '../components/aboutSection/TheAboutSection.vue'
 import TheFutureSection from '../components/futureSection/TheFutureSection.vue'
@@ -18,7 +18,18 @@ export default {
     TheContactSection,
     TheClientSection,
     TheFooter,
-  }
+  },
+  data() {
+    return {
+      sliderItems: [
+        {id: 1, name: 'img1', img: 'slider-img.png'},
+        {id: 2, name: 'img2', img: 'slider-img.png'},
+        {id: 3, name: 'img3', img: 'slider-img.png'},
+        {id: 4, name: 'img4', img: 'slider-img.png'},
+        {id: 5, name: 'img5', img: 'slider-img.png'},
+      ]
+    }
+  },
 }
 
 </script>
@@ -43,7 +54,11 @@ export default {
     <TheHeader/>
     <!-- end header section -->
     <!-- slider section -->
-    <TheSlider/>
+    <TheSlider
+      :carousel_data="sliderItems"
+      :interval="3000"
+      :slideWidth="600"
+    />
     <!-- end slider section -->
   </div>
 
