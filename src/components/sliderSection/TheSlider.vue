@@ -1,112 +1,82 @@
 <script>
-import TheSliderItem from './TheSliderItem.vue';
+import TheSliderItem from "./TheSliderItem.vue";
+import TheCarouselIndicators from "./TheCarouselIndicators.vue"
+import { defineComponent } from "vue";
+import { Carousel, Pagination, Slide } from "vue3-carousel";
+import { ref } from 'vue'
+import "vue3-carousel/dist/carousel.css";
 
-export default {
-    components: { TheSliderItem },
-    data() {
-      return {
-        currentSlideIndex: 0
-      }
-    },
-    props: {
-        carousel_data: {
-            type: Array,
-            default() {
-                return []
-            }
-        },
-        interval: {
-            type: Number,
-            default: 0
-        },
-        slideWidth: {
-            type: Number,
-            default: 600
-        }
-    },
-    methods: {
-      prevSlide() {
-        if(this.currentSlideIndex > 0) {
-            this.currentSlideIndex--;
-        }
-      },
-      nextSlide() {
-        if(this.currentSlideIndex >= this.carousel_data.length-1) {
-            this.currentSlideIndex = 0
-        } else {
-            this.currentSlideIndex++;
-        }
 
-      }  
-    },
-    mounted() {
-        if(this.interval > 0) {
-            setInterval(() => {
-                this.nextSlide()
-            }, this.interval)
-        }
-        
+export default defineComponent({
+  name: "Autoplay",
+  components: {
+    TheSliderItem,
+    TheCarouselIndicators,
+    Carousel,
+    Slide,
+    Pagination,
+  },
+ 
+  data() {
+    return {
+      myCarousel: ref(null),
+      isActive: false,
+      currentSlide: 0
     }
-}
+  },
+  
+  methods: {
+    slideTo(numb) {
+      console.log(this.currentSlide)
+      // this.isActive = !this.isActive
+      console.log(this.myCarousel.next())
+    }
+    
+  },
+
+  mounted() {
+    
+  },
+});
 </script>
 
-
 <template>
-    <section class="slider_section ">
-      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container-fluid ">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="detail-box">
-                    <h1>
-                      Smart Watches
-                    </h1>
-                    <p>
-                      Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Contact Us
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="wrapper-carousel">
-                <div class="the-carousel" :style="{'margin-left': '-' + (100 * currentSlideIndex) + '%'}">
-                <TheSliderItem
-                  v-for="item in carousel_data"
-                  :key="item.id"
-                  :item_data="item"
-                  :imageSlide="true"
-                  :width="slideWidth"
-                />
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <ol class="carousel-indicators">
-          <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
-          <li data-target="#customCarousel1" data-slide-to="1"></li>
-          <li data-target="#customCarousel1" data-slide-to="2"></li>
-        </ol>
-      </div>
+  <section class="slider_section">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+          <Carousel
+            ref="myCarousel"
+            v-model="currentSlide" 
+            :autoplay="2000" 
+            :wrap-around="true" 
+            :transition="1500">
 
-    </section>
+            <Slide v-for="slide in 3" 
+            :key="slide"
+            >
+              <TheSliderItem />
+            </Slide>
+
+            <template #addons>
+              <ol class="carousel-indicators">
+                <TheCarouselIndicators
+                v-model="currentSlide"
+                v-for="indicators in 3"
+                :key="indicators" 
+                :class="{ active: isActive }"
+                @click="slideTo"           
+                />
+                </ol>
+            </template>
+          </Carousel>
+
+
+          
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
-<style lang="scss">
-.wrapper-carousel{
-  max-width: 600px;
-  overflow: hidden;
-  margin: 0 auto;
-}
-.the-carousel {
-  display: flex;
-  transition: all ease .5s;
-}
 
-</style>
