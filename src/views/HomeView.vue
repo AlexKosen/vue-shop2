@@ -1,12 +1,14 @@
 <script>
-import TheHeader from '../components/headerSection/TheHeader.vue';
-import TheSlider from '../components/sliderSection/TheSlider.vue'
-import TheShopSection from '../components/shopSection/TheShopSection.vue';
-import TheAboutSection from '../components/aboutSection/TheAboutSection.vue'
-import TheFutureSection from '../components/futureSection/TheFutureSection.vue'
-import TheContactSection from '../components/contactSection/TheContactSection.vue'
-import TheClientSection from '../components/clientSection/TheClientSection.vue'
-import TheFooter from '../components/footerSection/TheFooter.vue'
+import TheHeader from "../components/headerSection/TheHeader.vue";
+import TheSlider from "../components/sliderSection/TheSlider.vue";
+import TheShopSection from "../components/shopSection/TheShopSection.vue";
+import TheAboutSection from "../components/aboutSection/TheAboutSection.vue";
+import TheFutureSection from "../components/futureSection/TheFutureSection.vue";
+import TheContactSection from "../components/contactSection/TheContactSection.vue";
+import TheClientSection from "../components/clientSection/TheClientSection.vue";
+import TheFooter from "../components/footerSection/TheFooter.vue";
+
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   components: {
@@ -21,17 +23,49 @@ export default {
   },
   data() {
     return {
-      sliderItems: [
-        {id: 1, name: 'img1', img: 'slider-img.png'},
-        {id: 2, name: 'img2', img: 'slider-img.png'},
-        {id: 3, name: 'img3', img: 'slider-img.png'},
-        {id: 4, name: 'img4', img: 'slider-img.png'},
-        {id: 5, name: 'img5', img: 'slider-img.png'},
-      ]
-    }
-  },
-}
+      sliderItem: [
+        {
+          id: 1,
+          title: "Smart Watches",
+          subTitle:
+            "Aenean scelerisque felis ut orci condimentum laoreet. Integer nisnisl, convallis et augue sit amet, lobortis semper quam. ",
+          img: "slider-img.png",
+        },
+        {
+          id: 2,
+          title: "Smart Watches",
+          subTitle:
+            "Aenean scelerisque felis ut orci condimentum laoreet. Integer nisnisl, convallis et augue sit amet, lobortis semper quam. ",
+          img: "slider-img.png",
+        },
+        {
+          id: 3,
+          title: "Smart Watches",
+          subTitle:
+            "Aenean scelerisque felis ut orci condimentum laoreet. Integer nisnisl, convallis et augue sit amet, lobortis semper quam. ",
+          img: "slider-img.png",
+        },
+      ],
 
+
+    };
+  },
+
+  computed: {
+    ...mapGetters(["PRODUCTS", "PRODUCTS_PRIME"])
+  },
+
+  methods: {
+    ...mapActions(["GET_PRODUCTS_FROM_API", "GET_PRODUCTS_PRIME_FROM_API"]),
+
+  },
+
+  mounted() {
+   this.GET_PRODUCTS_FROM_API();
+   this.GET_PRODUCTS_PRIME_FROM_API();
+   
+  },
+};
 </script>
 
 <template>
@@ -51,49 +85,47 @@ export default {
       </a>
     </div>
     <!-- header section strats -->
-    <TheHeader/>
+    <TheHeader />
     <!-- end header section -->
     <!-- slider section -->
-    <TheSlider
-      :carousel_data="sliderItems"
-      :interval="3000"
-      :slideWidth="600"
-    />
+    <TheSlider :slider_data="sliderItem" />
     <!-- end slider section -->
   </div>
 
   <!-- shop section -->
 
-  <TheShopSection/>
+  <TheShopSection 
+  :product_info="PRODUCTS"
+  :product_prime_info="PRODUCTS_PRIME"
+  />
 
   <!-- end shop section -->
 
   <!-- about section -->
 
-  <TheAboutSection/>
+  <TheAboutSection />
 
   <!-- end about section -->
 
   <!-- feature section -->
 
-  <TheFutureSection/>
+  <TheFutureSection />
 
   <!-- end feature section -->
 
   <!-- contact section -->
 
-  <TheContactSection/>
+  <TheContactSection />
 
   <!-- end contact section -->
 
   <!-- client section -->
-  <TheClientSection/>
+  <TheClientSection />
   <!-- end client section -->
 
   <!-- footer section -->
-  <TheFooter/>
+  <TheFooter />
   <!-- footer section -->
 </template>
 
-<style>
-</style>
+<style></style>

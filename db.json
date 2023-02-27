@@ -1,19 +1,69 @@
 {
-  "posts": [
+  "products": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "image": "w1.png",
+      "name": "Smartwatch black",
+      "price": 250,
+      "article": "SW1",
+      "available": true,
+      "category": "SmartWatch",
+      "color": "black"
+    },
+    {
+      "image": "w2.png",
+      "name": "Smartwatch olive",
+      "price": 175,
+      "article": "SW2",
+      "available": true,
+      "category": "SmartWatch",
+      "color": "olive" 
+    },
+    {
+      "image": "w3.png",
+      "name": "Smartwatch salmon",
+      "price": 150,
+      "article": "SW3",
+      "available": true,
+      "category": "SmartWatch",
+      "color": "salmon"
+    },
+    {
+      "image": "w4.png",
+      "name": "Smartwatch azure",
+      "price": 220,
+      "article": "SW4",
+      "available": true,
+      "category": "SmartWatch",
+      "color": "Azure"
+    },
+    {
+      "image": "w5.png",
+      "name": "Smartwatch silver",
+      "price": 160,
+      "article": "SW5",
+      "available": true,
+      "category": "SmartWatch",
+      "color": "silver"
+    },
+    {
+      "image": "w6.png",
+      "name": "Smartwatch orange",
+      "price": 200,
+      "article": "SW6",
+      "available": true,
+      "category": "SmartWatch",
+      "color": "orange"
     }
   ],
-  "comments": [
+  "products_prime": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "image": "w1.png",
+      "name": "Smartwatch black",
+      "price": 300,
+      "article": "SW1",
+      "available": true,
+      "category": "SmartWatch",
+      "color": "black"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

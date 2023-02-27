@@ -1,5 +1,4 @@
 <script>
-import TheSliderItem from "./TheSliderItem.vue";
 import { defineComponent } from "vue";
 import { Carousel, Pagination, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
@@ -7,10 +6,17 @@ import "vue3-carousel/dist/carousel.css";
 export default defineComponent({
   name: "Autoplay",
   components: {
-    TheSliderItem,
     Carousel,
     Slide,
     Pagination,
+  },
+  props: {
+    slider_data: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
   },
 
   data() {
@@ -24,13 +30,28 @@ export default defineComponent({
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-          <Carousel :autoplay="2000" :wrap-around="true" :transition="1500">
-            <Slide
-              v-for="(slide, index) in 3"
-              :key="slide"
-              :currentSlide="index"
-            >
-              <TheSliderItem />
+          <Carousel :autoplay="2000" :wrap-around="true" :transition="1800">
+            <Slide v-for="slide in slider_data" :key="slide.id">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="detail-box">
+                      <h1>{{ slide.title }}</h1>
+                      <p>
+                        {{ slide.subTitle }}
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn1"> Contact Us </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="img-box">
+                      <img :src="'images/' + slide.img" alt="img" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Slide>
 
             <template #addons>
@@ -43,6 +64,7 @@ export default defineComponent({
   </section>
 </template>
 <style lang="scss">
+
 .carousel__pagination {
   position: unset;
   margin: 0px;
@@ -79,5 +101,8 @@ export default defineComponent({
   position: unset;
   justify-content: center;
   align-items: center;
+}
+.detail-box {
+  text-align: left;
 }
 </style>
