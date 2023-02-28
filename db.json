@@ -1,17 +1,8 @@
 {
   "products": [
     {
-      "image": "w1.png",
-      "name": "Smartwatch black",
-      "price": 250,
-      "article": "SW1",
-      "available": true,
-      "category": "SmartWatch",
-      "color": "black"
-    },
-    {
       "image": "w2.png",
-      "name": "Smartwatch olive",
+      "name": "Smartwatch SWOL",
       "price": 175,
       "article": "SW2",
       "available": true,
@@ -20,7 +11,7 @@
     },
     {
       "image": "w3.png",
-      "name": "Smartwatch salmon",
+      "name": "Smartwatch SAL",
       "price": 150,
       "article": "SW3",
       "available": true,
@@ -29,7 +20,7 @@
     },
     {
       "image": "w4.png",
-      "name": "Smartwatch azure",
+      "name": "Smartwatch AZU",
       "price": 220,
       "article": "SW4",
       "available": true,
@@ -38,7 +29,7 @@
     },
     {
       "image": "w5.png",
-      "name": "Smartwatch silver",
+      "name": "Smartwatch SIL",
       "price": 160,
       "article": "SW5",
       "available": true,
@@ -47,18 +38,27 @@
     },
     {
       "image": "w6.png",
-      "name": "Smartwatch orange",
+      "name": "Smartwatch ORA",
       "price": 200,
       "article": "SW6",
       "available": true,
       "category": "SmartWatch",
       "color": "orange"
+    },
+    {
+      "image": "w1.png",
+      "name": "Smartwatch BLA",
+      "price": 250,
+      "article": "SW1",
+      "available": true,
+      "category": "SmartWatch",
+      "color": "black"
     }
   ],
   "products_prime": [
     {
       "image": "w1.png",
-      "name": "Smartwatch black",
+      "name": "Smartwatch BLAP",
       "price": 300,
       "article": "SW1",
       "available": true,
