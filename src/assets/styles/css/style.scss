@@ -2,6 +2,7 @@ $white: #ffffff;
 $black: #000000;
 $primary1: #f0d43a;
 $primary2: #3b4a6b;
+$primary3:#F8B22F;
 $textCol: #1f1f1f;
 
 // import fonts
@@ -418,7 +419,7 @@ a:focus {
       position: absolute;
       top: 0;
       left: 0;
-      background-color: $primary1;
+      background-color: $primary3;
       color: $white;
       display: flex;
       justify-content: center;

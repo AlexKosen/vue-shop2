@@ -7,7 +7,9 @@
       "article": "SW2",
       "available": true,
       "category": "SmartWatch",
-      "color": "olive" 
+      "color": "olive",
+      "statusNovetely": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc." 
     },
     {
       "image": "w3.png",
@@ -16,7 +18,9 @@
       "article": "SW3",
       "available": true,
       "category": "SmartWatch",
-      "color": "salmon"
+      "color": "salmon",
+      "statusNovetely": false,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc."
     },
     {
       "image": "w4.png",
@@ -25,7 +29,9 @@
       "article": "SW4",
       "available": true,
       "category": "SmartWatch",
-      "color": "Azure"
+      "color": "Azure",
+      "statusNovetely": false,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc."
     },
     {
       "image": "w5.png",
@@ -34,7 +40,9 @@
       "article": "SW5",
       "available": true,
       "category": "SmartWatch",
-      "color": "silver"
+      "color": "silver",
+      "statusNovetely": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc."
     },
     {
       "image": "w6.png",
@@ -43,7 +51,9 @@
       "article": "SW6",
       "available": true,
       "category": "SmartWatch",
-      "color": "orange"
+      "color": "orange",
+      "statusNovetely": false,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc."
     },
     {
       "image": "w1.png",
@@ -52,7 +62,9 @@
       "article": "SW1",
       "available": true,
       "category": "SmartWatch",
-      "color": "black"
+      "color": "black",
+      "statusNovetely": false,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc."
     }
   ],
   "products_prime": [
@@ -63,7 +75,9 @@
       "article": "SW1",
       "available": true,
       "category": "SmartWatch",
-      "color": "black"
+      "color": "black",
+      "statusNovetely": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc."
     }
   ]
 }
