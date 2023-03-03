@@ -15,7 +15,7 @@ export default defineConfig({
     loaderOptions: {
       sass: {
         prependData: `
-          @import "./src/assets/styles/styles.scss";
+          @import "./src/assets/styles/css/style.scss";
         `
       }
     }

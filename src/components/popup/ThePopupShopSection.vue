@@ -68,6 +68,7 @@ export default {
   position: fixed;
   top: 100px;
   max-width: 600px;
+  border-radius: 15px;
   background: #ffffff;
   box-shadow: 0 0 17px 0 #e7e7e7;
   z-index: 100;
@@ -82,6 +83,10 @@ export default {
     justify-content: space-around;
     align-items: center;
     height: 400px;
+    @media (max-width: 768px) {
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
   }
   .material-icons {
     cursor: pointer;

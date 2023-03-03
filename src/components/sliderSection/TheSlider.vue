@@ -30,12 +30,12 @@ export default defineComponent({
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-          <Carousel :autoplay="2000" :wrap-around="true" :transition="1800">
+          <Carousel :autoplay="2000" :wrap-around="true" :transition="1000">
             <Slide v-for="slide in slider_data" :key="slide.id">
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-md-6">
-                    <div class="detail-box">
+                    <div class="detail-box ffff">
                       <h1>{{ slide.title }}</h1>
                       <p>
                         {{ slide.subTitle }}
