@@ -12,18 +12,39 @@
             default() {
                 return []
             }
-        }
+        },
+    },
+    data() {
+      return {
+        widthScreen: 2
+      }
     },
     components: {
       Carousel,
       Slide,
       Navigation,
     },
+    methods: {
+      checkWidthScreen() {
+        if(window.innerWidth < 768) {
+          this.widthScreen = 1
+        } else {
+          this.widthScreen = 2
+        }
+      }
+    },
+    mounted() {
+      this.checkWidthScreen();
+      window.addEventListener('resize', this.checkWidthScreen)
+    },
+    beforeDestroy() {
+      window.removeEventListener('resize', this.checkWidthScreen)
+    },
   })
 </script>
 
 <template>
-    <Carousel :items-to-show="2" :wrap-around="true" :autoplay="2000" snapAlign="start">
+    <Carousel :items-to-show="widthScreen" :wrap-around="true" :autoplay="2000" snapAlign="start">
       <Slide v-for="slide in client_items" :key="slide">
         <div class="carousel__item">
             <div class="item">
@@ -59,33 +80,14 @@
 
 <style lang="scss" >
   .carousel__slide {
-  padding: 10px;
+  padding: 5px;
 }
 .client_section {
 .detail-box {
   text-align: center;
   }
 }
-.carousel__prev,
-.carousel__next {
-  box-sizing: content-box;
-  background: var(--vc-nav-background);
-  border-radius: var(--vc-nav-border-radius);
-  width: var(--vc-nav-width);
-  height: var(--vc-nav-height);
-  text-align: center;
-  font-size: var(--vc-nav-height);
-  padding: 0;
-  color: var(--vc-nav-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  border: 0;
-  cursor: pointer;
-  margin: 0 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
+
+
 </style>
   
