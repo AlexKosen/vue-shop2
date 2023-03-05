@@ -1,5 +1,7 @@
 <script>
+import { mapActions } from "vuex";
 import ThePopupShopSection from "../popup/ThePopupShopSection.vue";
+import TheCart from "../cart/TheCart.vue";
 export default {
   props: {
     product: {
@@ -11,20 +13,32 @@ export default {
   },
   components: {
     ThePopupShopSection,
+    TheCart,
   },
   data() {
     return {
       isInfoPopupVisible: false,
+      isCartVisible: false
     };
   },
 
   methods: {
+    ...mapActions(["ADD_TO_CART"]),
+
     showPopupInfo() {
       this.isInfoPopupVisible = true;
     },
     closeInfoPopup() {
       this.isInfoPopupVisible = false;
     },
+    addToCart() {
+      this.isInfoPopupVisible = false;
+      this.isCartVisible = true;
+      this.ADD_TO_CART(this.product)
+    },
+    closeCart() {
+      this.isCartVisible = false
+    }
   },
 };
 </script>
@@ -34,9 +48,10 @@ export default {
     <div class="box">
       <ThePopupShopSection
         v-if="isInfoPopupVisible"
-        :popupTitle="product.name"
         :rightBtnTitle="'To cart'"
+        :productItem="product"
         @closePopup="closeInfoPopup"
+        @addToCart="addToCart"
       >
         <div class="img-box">
           <img :src="'images/' + product.image" alt="img" />
@@ -52,6 +67,10 @@ export default {
           <p>{{ product.description }}</p>
         </div>
       </ThePopupShopSection>
+
+      <TheCart v-if="isCartVisible"
+        @closeCart="closeCart"
+      />
 
       <div class="img-box" @click="showPopupInfo">
         <img :src="'images/' + product.image" alt="img" />

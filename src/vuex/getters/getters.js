@@ -5,4 +5,7 @@ export default {
   PRODUCTS_PRIME(state) {
     return state.products_prime;
   },
+  CART(state) {
+    return state.cart
+  }
 };

@@ -1,28 +1,40 @@
 <script>
+import { mapGetters, mapActions } from "vuex";
+import TheCartItem from "./TheCartItem.vue";
 export default {
+  components: {
+    TheCartItem,
+  },
+
   props: {
-    productItem: {
-      type: Object,
-      default() {
-        return {}
-      },
-    },
-    rightBtnTitle: {
+    popupTitle: {
       type: String,
-      default: "ok",
+      default: "Cart",
     },
   },
 
-  methods: {
-    rightBtnAction() {
-      this.$emit("rightBtnAction");
-    },
-    closePopup() {
-      this.$emit("closePopup");
-    },
-    addToCart(productItem) {
-      this.$emit("addToCart", productItem)
+  computed: {
+    ...mapGetters(["CART"]),
+  },
+  cartTotalCost() {
+    if (this.CART.length) {
+      let rezult = [];
+      for (let item of this.CART) {
+        rezult.push(item.quantity * item.price);
+      }
+      rezult = rezult.reduce(function (sum, current) {
+        return sum + current;
+      }, 0);
+      return rezult
+    } else {
+      rezult = 0
     }
+  },
+
+  methods: {
+    closeCart() {
+      this.$emit("closeCart");
+    },
   },
 
   mounted() {
@@ -39,23 +51,23 @@ export default {
   <div class="popup-wrapper" ref="popup_wrapper">
     <div class="the-popup">
       <div class="the-popup__header">
-        <span>{{ productItem.name }}</span>
-        <span class="material-icons" @click="closePopup"> close </span>
+        <span>{{ popupTitle.name }}</span>
+        <span class="material-icons" @click="closeCart"> close </span>
       </div>
       <div class="the-popup__content">
-        <slot></slot>
+        <TheCartItem
+          v-for="item in CART"
+          :key="item.article"
+          :cart_item_data="item"
+          :cartTotalCost="this.cartTotalCost"
+        />
       </div>
-      <div class="the-popup__footer">
-        <button class="close-modal btn" @click="closePopup">Close</button>
-        <button class="sabmit_btn btn" @click="addToCart">
-          {{ rightBtnTitle }}
-        </button>
-      </div>
+      <div class="the-popup__footer"></div>
     </div>
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .popup-wrapper {
   background: rgba(64, 64, 64, 0.4);
   display: flex;
@@ -89,9 +101,9 @@ export default {
     align-items: center;
     height: 400px;
     @media (max-width: 768px) {
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-  }
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
   }
   .material-icons {
     cursor: pointer;
