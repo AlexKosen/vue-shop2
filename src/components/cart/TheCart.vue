@@ -15,11 +15,11 @@ export default {
 
   computed: {
     ...mapGetters(["CART"]),
-  },
+  
   cartTotalCost() {
+    let rezult = [];
     if (this.CART.length) {
-      let rezult = [];
-      for (let item of this.CART) {
+        for (let item of this.CART) {
         rezult.push(item.quantity * item.price);
       }
       rezult = rezult.reduce(function (sum, current) {
@@ -30,11 +30,14 @@ export default {
       rezult = 0
     }
   },
-
+},
   methods: {
     closeCart() {
       this.$emit("closeCart");
     },
+    deleteFromCart(index) {
+      console.log(index)
+    }
   },
 
   mounted() {
@@ -51,7 +54,7 @@ export default {
   <div class="popup-wrapper" ref="popup_wrapper">
     <div class="the-popup">
       <div class="the-popup__header">
-        <span>{{ popupTitle.name }}</span>
+        <h4>{{ popupTitle }}</h4>
         <span class="material-icons" @click="closeCart"> close </span>
       </div>
       <div class="the-popup__content">
@@ -59,10 +62,13 @@ export default {
           v-for="item in CART"
           :key="item.article"
           :cart_item_data="item"
-          :cartTotalCost="this.cartTotalCost"
+          @deleteFromCart="deleteFromCart"
         />
       </div>
-      <div class="the-popup__footer"></div>
+      <div class="the-popup__footer">
+        <h4>Total: ${{ cartTotalCost }}</h4>
+        <button>Сheckout</button>
+      </div>
     </div>
   </div>
 </template>
@@ -79,12 +85,13 @@ export default {
   left: 0;
   top: 0;
   bottom: 0;
+  overflow-y: hidden
 }
 .the-popup {
   padding: 16px;
   position: fixed;
   top: 100px;
-  max-width: 600px;
+  width: 600px;
   border-radius: 15px;
   background: #ffffff;
   box-shadow: 0 0 17px 0 #e7e7e7;
@@ -97,9 +104,13 @@ export default {
   }
   &__content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
-    height: 400px;
+    overflow-y: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    // max-width: 80%;
+    //align-items: center;
     @media (max-width: 768px) {
       flex-wrap: wrap;
       margin-bottom: 15px;

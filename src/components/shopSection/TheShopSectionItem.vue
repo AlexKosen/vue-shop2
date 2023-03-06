@@ -31,13 +31,15 @@ export default {
     closeInfoPopup() {
       this.isInfoPopupVisible = false;
     },
-    addToCart() {
+    addToCart(data) {
       this.isInfoPopupVisible = false;
       this.isCartVisible = true;
-      this.ADD_TO_CART(this.product)
+      document.body.classList.add('popup-open');
+      this.ADD_TO_CART(data)
     },
     closeCart() {
-      this.isCartVisible = false
+      this.isCartVisible = false;
+      document.body.classList.remove('popup-open');
     }
   },
 };
@@ -107,4 +109,7 @@ export default {
     font-weight: 600;
   }
 }
+body.popup-open {
+    overflow: hidden; /* Убираем полосы прокрутки на странице */
+  }
 </style>

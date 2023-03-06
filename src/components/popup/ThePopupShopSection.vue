@@ -20,12 +20,15 @@ export default {
     closePopup() {
       this.$emit("closePopup");
     },
-    addToCart(productItem) {
-      this.$emit("addToCart", productItem)
+    addToCart() {
+      this.$emit("addToCart", this.productItem)
     }
   },
 
   mounted() {
+    if(this.productItem.quantity == undefined) {
+      this.productItem.quantity = 1
+    }
     document.addEventListener("click", (item) => {
       if (item.target === this.$refs["popup_wrapper"]) {
         this.closePopup();
@@ -80,6 +83,7 @@ export default {
   &__header,
   &__footer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
   }
@@ -87,10 +91,11 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 400px;
+    height: 500px;
     @media (max-width: 768px) {
     flex-wrap: wrap;
     margin-bottom: 15px;
+    overflow: hidden;
   }
   }
   .material-icons {

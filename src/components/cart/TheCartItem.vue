@@ -7,12 +7,7 @@ export default {
                 return {}
             }
         },
-        cartTotalCost: {
-            type: Number,
-            default() {
-                return 0
-            }
-        }
+
     },
     methods: {
         deleteFromCart() {
@@ -39,11 +34,11 @@ export default {
         <img class="the-cart-item__image" :src="'images/' + cart_item_data.image" alt="img">
         <div class="the-cart-item__info">
             <p>{{ cart_item_data.name }}</p>
-            <p>{{ cart_item_data.price }}</p>
-            <p>{{ cart_item_data.article }}</p>
+            <p>Model: {{ cart_item_data.article }}</p>
+            <p>Price: {{ cart_item_data.price }}$</p>     
         </div>
         <div class="the-cart-item__quantity">
-            <p>Qty: {{ cartTotalCost }}</p>
+            <p>Qty: </p>
             <span>
                 <span class="quantity__btn" @click="incrementItem">+</span>
                 {{ cart_item_data.quantity }}
@@ -60,6 +55,7 @@ export default {
 .the-cart-item {
     display: flex;
     flex-wrap: nowrap;
+    min-width: 75%;
     justify-content: space-between; 
     align-items: center;
     box-shadow: 0 0 8px 0;
