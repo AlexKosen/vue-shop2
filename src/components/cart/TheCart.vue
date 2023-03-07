@@ -32,11 +32,20 @@ export default {
   },
 },
   methods: {
+    ...mapActions([
+    "INCREMENT_TO_CART_ITEM", "DECREMENT_TO_CART_ITEM", "DELETE_FROM_CART"
+    ]),
     closeCart() {
       this.$emit("closeCart");
     },
     deleteFromCart(index) {
-      console.log(index)
+      this.DELETE_FROM_CART(index)
+    },
+    increment(index) {
+      this.INCREMENT_TO_CART_ITEM(index)
+    },
+    decrement(index) {
+      this.DECREMENT_TO_CART_ITEM(index)
     }
   },
 
@@ -58,11 +67,15 @@ export default {
         <span class="material-icons" @click="closeCart"> close </span>
       </div>
       <div class="the-popup__content">
+        <div v-if="!CART.length">It's still empty, but it's not too late to fix it!</div>
         <TheCartItem
-          v-for="item in CART"
+          v-for="(item, index) in CART"
           :key="item.article"
           :cart_item_data="item"
-          @deleteFromCart="deleteFromCart"
+          @deleteFromCart="deleteFromCart(index)"
+          @increment="increment(index)"
+          @decrement="decrement(index)"
+          
         />
       </div>
       <div class="the-popup__footer">
@@ -109,8 +122,6 @@ export default {
     overflow-y: auto;
     margin-top: 15px;
     margin-bottom: 15px;
-    // max-width: 80%;
-    //align-items: center;
     @media (max-width: 768px) {
       flex-wrap: wrap;
       margin-bottom: 15px;

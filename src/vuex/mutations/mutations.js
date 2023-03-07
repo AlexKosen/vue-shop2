@@ -22,5 +22,19 @@ export default {
     } else {
       state.cart.push(product)
     }
+  },
+
+  INCREMENT: (state, index) => {
+    state.cart[index].quantity ++
+  },
+
+  DECREMENT: (state, index) => {
+    if(state.cart[index].quantity > 1) {
+      state.cart[index].quantity --
+    }
+  },
+
+  REMOVE_CART: (state, index) => {
+    state.cart.splice(index, 1)
   }
 };

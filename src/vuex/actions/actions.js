@@ -29,5 +29,17 @@ export default {
 
   ADD_TO_CART({commit}, product) {
     commit("SET_TO_CART", product)
+  },
+
+  INCREMENT_TO_CART_ITEM({commit}, index) {
+    commit("INCREMENT", index)
+  }, 
+
+  DECREMENT_TO_CART_ITEM({commit}, index) {
+    commit("DECREMENT", index)
+  },
+
+  DELETE_FROM_CART({commit}, index) {
+    commit("REMOVE_CART", index)
   }
 };
