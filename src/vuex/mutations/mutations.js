@@ -3,10 +3,6 @@ export default {
     state.products = products;
   },
 
-  SET_PRODUCT_PRIME_TO_STATE: (state, products) => {
-    state.products_prime = products;
-  },
-
   SET_TO_CART: (state, product) => {
     if(state.cart.length) {
       let isProductExist = false

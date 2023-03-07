@@ -1,6 +1,18 @@
 {
   "products": [
     {
+      "image": "w1.png",
+      "name": "Smartwatch BLAP",
+      "price": 300,
+      "article": "SW1",
+      "available": true,
+      "category": "SmartWatch",
+      "color": "black",
+      "statusNovetely": true,
+      "products_prime": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc."
+    },
+    {
       "image": "w2.png",
       "name": "Smartwatch SWOL",
       "price": 175,
@@ -64,19 +76,6 @@
       "category": "SmartWatch",
       "color": "black",
       "statusNovetely": false,
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc."
-    }
-  ],
-  "products_prime": [
-    {
-      "image": "w1.png",
-      "name": "Smartwatch BLAP",
-      "price": 300,
-      "article": "SW1",
-      "available": true,
-      "category": "SmartWatch",
-      "color": "black",
-      "statusNovetely": true,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc."
     }
   ]

@@ -9,7 +9,7 @@ export default {
     },
     rightBtnTitle: {
       type: String,
-      default: "ok",
+      default: "Buy!",
     },
   },
 
@@ -42,7 +42,7 @@ export default {
   <div class="popup-wrapper" ref="popup_wrapper">
     <div class="the-popup">
       <div class="the-popup__header">
-        <span>{{ productItem.name }}</span>
+        <!-- <span>{{ productItem.name }}</span> -->
         <span class="material-icons" @click="closePopup"> close </span>
       </div>
       <div class="the-popup__content">

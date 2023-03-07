@@ -18,10 +18,20 @@ export default {
   data() {
     return {
       isInfoPopupVisible: false,
-      isCartVisible: false
+      isCartVisible: false,
+      isProductPrime: false
     };
   },
-
+  computed: {
+    productPrime() {
+      if(this.product.products_prime) {
+        return this.isProductPrime = true
+      } else {
+        return this.isProductPrime  = false
+      }
+    }
+  },
+  
   methods: {
     ...mapActions(["ADD_TO_CART"]),
 
@@ -46,11 +56,11 @@ export default {
 </script>
 
 <template>
-  <div class="col-sm-6 col-xl-3">
+  <div class="col-sm-6" :class="{'col-xl-3': !productPrime}">
     <div class="box">
       <ThePopupShopSection
         v-if="isInfoPopupVisible"
-        :rightBtnTitle="'To cart'"
+        :rightBtnTitle="'Buy!'"
         :productItem="product"
         @closePopup="closeInfoPopup"
         @addToCart="addToCart"

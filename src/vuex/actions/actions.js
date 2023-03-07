@@ -14,19 +14,6 @@ export default {
       });
   },
 
-  GET_PRODUCTS_PRIME_FROM_API({ commit }) {
-    return axios
-      .get("http://localhost:3000/products_prime")
-      .then((products) => {
-        commit("SET_PRODUCT_PRIME_TO_STATE", products.data);
-        return products;
-      })
-      .catch((error) => {
-        console.log(error);
-        return error;
-      });
-  },
-
   ADD_TO_CART({commit}, product) {
     commit("SET_TO_CART", product)
   },

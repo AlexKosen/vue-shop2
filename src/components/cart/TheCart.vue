@@ -52,7 +52,7 @@ export default {
   mounted() {
     document.addEventListener("click", (item) => {
       if (item.target === this.$refs["popup_wrapper"]) {
-        this.closePopup();
+        this.closeCart();
       }
     });
   },

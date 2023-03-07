@@ -52,17 +52,16 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["PRODUCTS", "PRODUCTS_PRIME"])
+    ...mapGetters(["PRODUCTS",])
   },
 
   methods: {
-    ...mapActions(["GET_PRODUCTS_FROM_API", "GET_PRODUCTS_PRIME_FROM_API"]),
+    ...mapActions(["GET_PRODUCTS_FROM_API",]),
 
   },
 
   mounted() {
    this.GET_PRODUCTS_FROM_API();
-   this.GET_PRODUCTS_PRIME_FROM_API();
    
   },
 };
@@ -96,7 +95,6 @@ export default {
 
   <TheShopSection 
   :product_info="PRODUCTS"
-  :product_prime_info="PRODUCTS_PRIME"
   />
 
   <!-- end shop section -->

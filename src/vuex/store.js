@@ -7,7 +7,6 @@ export const store = createStore({
   state() {
     return {
       products: [],
-      products_prime: [],
       cart: [],
     };
   },
