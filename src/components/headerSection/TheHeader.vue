@@ -1,5 +1,25 @@
 <script>
-export default {};
+import TheCartIcon from '../cart/TheCartIcon.vue';
+
+export default {
+  components: {
+    TheCartIcon,
+  },
+
+  data() {
+    return {
+      
+    }
+  },
+  methods: {
+    showCart() {
+      console.log(46464646)
+      },
+    closeCart() {
+    
+    },
+  }
+};
 </script>
 
 <template>
@@ -51,7 +71,8 @@ export default {};
               <i class="fa fa-user" aria-hidden="true"></i>
             </a>
             <a href="">
-              <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              <TheCartIcon @click="showCart"/>
+              <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
             </a>
             <a href="">
               <i class="fa fa-search" aria-hidden="true"></i>
