@@ -32,7 +32,7 @@
         </div>
         <div class="col-md-6">
           <div class="img-box">
-            <img src="images/contact-img.jpg" alt="">
+            <img :src="'images/contact-img.jpg'" alt="">
           </div>
         </div>
       </div>

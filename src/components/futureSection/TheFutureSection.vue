@@ -13,7 +13,7 @@
         <div class="col-sm-6 col-lg-3">
           <div class="box">
             <div class="img-box">
-              <img src="images/f1.png" alt="">
+              <img :src="'images/f1.png'" alt="">
             </div>
             <div class="detail-box">
               <h5>
@@ -34,7 +34,7 @@
         <div class="col-sm-6 col-lg-3">
           <div class="box">
             <div class="img-box">
-              <img src="images/f2.png" alt="">
+              <img :src="'images/f2.png'" alt="">
             </div>
             <div class="detail-box">
               <h5>
@@ -55,7 +55,7 @@
         <div class="col-sm-6 col-lg-3">
           <div class="box">
             <div class="img-box">
-              <img src="images/f3.png" alt="">
+              <img :src="'images/f3.png'" alt="">
             </div>
             <div class="detail-box">
               <h5>
@@ -76,7 +76,7 @@
         <div class="col-sm-6 col-lg-3">
           <div class="box">
             <div class="img-box">
-              <img src="images/f4.png" alt="">
+              <img :src="'images/f4.png'" alt="">
             </div>
             <div class="detail-box">
               <h5>
