@@ -1,22 +1,30 @@
 <script>
 import TheCartIcon from '../cart/TheCartIcon.vue';
+import TheCartVue from '../cart/TheCart.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
     TheCartIcon,
+    TheCartVue
   },
 
   data() {
     return {
-      
+      isCartVisible: false
     }
   },
+
+  computed: {
+    ...mapGetters(['CART'])
+  },
+
   methods: {
     showCart() {
-      console.log(46464646)
+      this.isCartVisible = true
       },
     closeCart() {
-    
+      this.isCartVisible = false
     },
   }
 };
@@ -28,7 +36,6 @@ export default {
       <nav class="navbar navbar-expand-lg custom_nav-container">
         <RouterLink class="navbar-brand" :to="{ name: 'home' }" 
                 ><span> Timups </span></RouterLink>
-
         <button
           class="navbar-toggler"
           type="button"
@@ -70,10 +77,11 @@ export default {
             <a href="">
               <i class="fa fa-user" aria-hidden="true"></i>
             </a>
-            <a href="">
-              <TheCartIcon @click="showCart"/>
-              <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
-            </a>
+            <span>
+              <TheCartIcon 
+                @showCart="showCart"
+                :itemCount="CART.length"/>
+            </span>
             <a href="">
               <i class="fa fa-search" aria-hidden="true"></i>
             </a>
@@ -81,8 +89,12 @@ export default {
         </div>
       </nav>
     </div>
+    <TheCartVue 
+      @click="closeCart" 
+      v-if="isCartVisible"
+      />
   </header>
 </template>
-<style>
+<style lang="scss">
 
 </style>

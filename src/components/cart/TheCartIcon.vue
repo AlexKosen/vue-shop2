@@ -1,10 +1,6 @@
 <script>
 
   export default {
-    components: {
-
-    },
-
     props: {
       itemCount: {
         type: Number,
@@ -12,21 +8,27 @@
       }
     },
     methods: {
-  
+      showCart() {
+        this.$emit('showCart')
+      }
   }
 }
   </script>
 
 <template>
-    <div class="cart-icon">
+    <div class="cart-icon" @click="showCart">
       <span class="cart-count">{{ itemCount }}</span>
       <i class="fa fa-cart-plus" aria-hidden="true"></i>
     </div>
   </template>
   
-  <style>
+  <style lang="scss">
   .cart-icon {
     position: relative;
+    margin-left: 15px;
+    &:hover {
+      cursor: pointer;
+    }
   }
   
   .cart-count {
