@@ -90,7 +90,7 @@ export default {
       </nav>
     </div>
     <TheCartVue 
-      @click="closeCart" 
+      @closeCart="closeCart" 
       v-if="isCartVisible"
       />
   </header>
