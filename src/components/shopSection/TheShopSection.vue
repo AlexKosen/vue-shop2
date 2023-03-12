@@ -33,7 +33,9 @@ export default {
         />
       </div>
       <div class="btn-box">
-        <a href=""> View All </a>
+        <RouterLink class="nav-link" 
+          :to="{ name: 'watches' }" 
+        >View All</RouterLink>
       </div>
     </div>
   </section>

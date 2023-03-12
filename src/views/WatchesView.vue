@@ -1,8 +1,19 @@
-<script setup>
+<script>
+import { mapGetters } from 'vuex';
 import TheHeaderVue from '../components/headerSection/TheHeader.vue';
 import TheFooter from '../components/footerSection/TheFooter.vue';
 import TheShopSection from '../components/shopSection/TheShopSection.vue';
 
+export default {
+  components: {
+    TheHeaderVue,
+    TheFooter,
+    TheShopSection
+  },
+  computed: {
+    ...mapGetters(['PRODUCTS'])
+  }
+}
 </script>
 
 <template>
@@ -18,7 +29,8 @@ import TheShopSection from '../components/shopSection/TheShopSection.vue';
 
 <!-- shop section -->
 
-<TheShopSection/>
+<TheShopSection
+:product_info="PRODUCTS"/>
 
 <!-- end shop section -->
 
