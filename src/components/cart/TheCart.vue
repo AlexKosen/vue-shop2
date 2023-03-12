@@ -103,7 +103,7 @@ export default {
 .the-popup {
   padding: 16px;
   position: fixed;
-  top: 100px;
+  //top: 100px;
   width: 600px;
   border-radius: 15px;
   background: #ffffff;
