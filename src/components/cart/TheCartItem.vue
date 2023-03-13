@@ -39,7 +39,7 @@ export default {
         </div>
         <div class="the-cart-item__quantity">
             <p>Qty: </p>
-            <span>
+            <span class="quantity">
                 <span class="quantity__btn" @click="incrementItem">+</span>
                 {{ cart_item_data.quantity }}
                 <span class="quantity__btn" @click="decrementItem">-</span>
@@ -55,12 +55,13 @@ export default {
 .the-cart-item {
     display: flex;
     flex-wrap: nowrap;
-    min-width: 75%;
+    min-width: 85%;
+    border-radius: 15px;
     justify-content: space-between; 
     align-items: center;
     box-shadow: 0 0 8px 0;
-    padding: 8px;
-    margin-bottom: 8px;
+    padding: 10px;
+    margin: 10px 5px;
     &__image {
         max-width: 60px;
         @media (max-width: 480px) {
@@ -71,10 +72,15 @@ export default {
         font-weight: 600;
     }
     &__quantity {
-        width: 35px;
+        text-align: center;
+    }
+    .quantity {
+        display: flex;
+        flex-wrap: nowrap; 
     }
    .quantity__btn {
     cursor: pointer;
+    margin: 0 7px;
    }
    .the-cart-item__btn-delete {
     display: inline-block;

@@ -91,7 +91,7 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 500px;
+    height: 400px;
     @media (max-width: 768px) {
     flex-wrap: wrap;
     margin-bottom: 15px;

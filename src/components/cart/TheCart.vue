@@ -126,9 +126,10 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: 400px;
     overflow-y: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     @media (max-width: 768px) {
       flex-wrap: wrap;
       margin-bottom: 15px;
