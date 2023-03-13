@@ -83,7 +83,7 @@ export default defineComponent({
 
 <style lang="scss">
 .carousel__slide {
-  padding: 5px;
+  padding: 3px;
 }
 .client_section {
   .detail-box {

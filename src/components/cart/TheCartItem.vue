@@ -65,7 +65,7 @@ export default {
     &__image {
         max-width: 60px;
         @media (max-width: 480px) {
-            margin: 0 5px;
+            margin: 0 15px 0 4px;
         }
     }
     &__info p span {
