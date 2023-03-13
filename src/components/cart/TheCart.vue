@@ -80,7 +80,7 @@ export default {
       </div>
       <div class="the-popup__footer">
         <h4>Total: ${{ cartTotalCost }}</h4>
-        <button>Сheckout</button>
+        <button class="the-popup__footer-btn">Сheckout</button>
       </div>
     </div>
   </div>
@@ -102,13 +102,20 @@ export default {
 }
 .the-popup {
   padding: 16px;
-  position: fixed;
+  //position: fixed;
   //top: 100px;
   width: 600px;
   border-radius: 15px;
   background: #ffffff;
   box-shadow: 0 0 17px 0 #e7e7e7;
   z-index: 100;
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
+  @media (max-width: 480px) {
+    max-width: 95%;
+    font-size: 0.8rem;
+  }
   &__header,
   &__footer {
     display: flex;
@@ -130,9 +137,9 @@ export default {
   .material-icons {
     cursor: pointer;
   }
-  .sabmit_btn {
+  .the-popup__footer-btn {
     display: inline-block;
-    padding: 10px 45px;
+    padding: 8px 35px;
     background-color: #f0d43a;
     color: #ffffff;
     font-size: 1rem;
@@ -140,27 +147,11 @@ export default {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     border: 1px solid #f0d43a;
-  }
-  .close-modal {
-    display: inline-block;
-    padding: 10px 45px;
-    background-color: #f0d43a;
-    color: #ffffff;
-    font-size: 1rem;
-    border-radius: 5px;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    border: 1px solid #f0d43a;
-  }
-  .sabmit_btn:hover {
-    background-color: #f8b22f;
-    border: 1px solid #f8b22f;
-    color: #ffffff;
-  }
-  .close-modal:hover {
-    background-color: #f8b22f;
-    border: 1px solid #f8b22f;
-    color: #ffffff;
-  }
+    &:hover {
+        background-color: #f8b22f;
+        border: 1px solid #f8b22f;
+        color: #ffffff;
+    }
+  } 
 }
 </style>

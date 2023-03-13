@@ -33,9 +33,9 @@ export default {
     <div class="the-cart-item">
         <img class="the-cart-item__image" :src="'images/' + cart_item_data.image" alt="img">
         <div class="the-cart-item__info">
-            <p>{{ cart_item_data.name }}</p>
-            <p>Model: {{ cart_item_data.article }}</p>
-            <p>Price: {{ cart_item_data.price }}$</p>     
+            <p><span>{{ cart_item_data.name }}</span></p>
+            <p><span>Model:</span> {{ cart_item_data.article }}</p>
+            <p><span>Price:</span> {{ cart_item_data.price }}$</p>     
         </div>
         <div class="the-cart-item__quantity">
             <p>Qty: </p>
@@ -46,7 +46,7 @@ export default {
             </span>
             
         </div>
-        <button @click="deleteFromCart">Delete</button>
+        <button class="the-cart-item__btn-delete" @click="deleteFromCart">Delete</button>
     </div>
   
 </template>
@@ -62,11 +62,36 @@ export default {
     padding: 8px;
     margin-bottom: 8px;
     &__image {
-        max-width: 50px;
+        max-width: 60px;
+        @media (max-width: 480px) {
+            margin: 0 5px;
+        }
+    }
+    &__info p span {
+        font-weight: 600;
+    }
+    &__quantity {
+        width: 35px;
     }
    .quantity__btn {
     cursor: pointer;
-   }    
+   }
+   .the-cart-item__btn-delete {
+    display: inline-block;
+    padding: 4px 15px;
+    background-color: #f0d43a;
+    color: #ffffff;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border: 1px solid #f0d43a;
+    &:hover {
+        background-color: #f8b22f;
+        border: 1px solid #f8b22f;
+        color: #ffffff;
+    }
+  }    
 }
 
 </style>
