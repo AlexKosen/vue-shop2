@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   GET_PRODUCTS_FROM_API({ commit }) {
     return axios
-      .get("http://localhost:3000/products")
+      .get("https://shop2-fc728-default-rtdb.europe-west1.firebasedatabase.app/products.json")
       .then((products) => {
         commit("SET_PRODUCT_TO_STATE", products.data);
         return products;
