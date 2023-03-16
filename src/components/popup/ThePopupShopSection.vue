@@ -80,6 +80,13 @@ export default {
   background: #ffffff;
   box-shadow: 0 0 17px 0 #e7e7e7;
   z-index: 100;
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
+  @media (max-width: 480px) {
+    max-width: 95%;
+    font-size: 0.8rem;
+  }
   &__header,
   &__footer {
     display: flex;

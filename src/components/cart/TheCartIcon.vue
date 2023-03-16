@@ -17,7 +17,7 @@
 
 <template>
     <div class="cart-icon" @click="showCart">
-      <span class="cart-count">{{ itemCount }}</span>
+      <span v-if="itemCount > 0" class="cart-count">{{ itemCount }}</span>
       <i class="fa fa-cart-plus" aria-hidden="true"></i>
     </div>
   </template>
