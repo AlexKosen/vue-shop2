@@ -6,12 +6,13 @@ import { mapGetters } from 'vuex';
 export default {
   components: {
     TheCartIcon,
-    TheCartVue
+    TheCartVue,
   },
 
   data() {
     return {
-      isCartVisible: false
+      isCartVisible: false,
+      isOpenBurgerMenu: false,
     }
   },
 
@@ -26,6 +27,9 @@ export default {
     closeCart() {
       this.isCartVisible = false
     },
+    showCartMobile() {
+      this.isOpenBurgerMenu = !this.isOpenBurgerMenu
+    }
   }
 };
 </script>
@@ -37,18 +41,18 @@ export default {
         <RouterLink class="navbar-brand" :to="{ name: 'home' }" 
                 ><span> Timups </span></RouterLink>
         <button
+          @click="showCartMobile"
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
-          aria-expanded="false"
+          :aria-expanded="isOpenBurgerMenu"
           aria-label="Toggle navigation"
         >
-          <span class=""> </span>
+          <span class=""> </span>  
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" :class="{show: isOpenBurgerMenu}" id="navbarSupportedContent">
           <ul class="navbar-nav">
             <li class="nav-item active">
               <RouterLink class="nav-link" :to="{ name: 'home' }" 
@@ -77,17 +81,18 @@ export default {
             <a href="">
               <i class="fa fa-user" aria-hidden="true"></i>
             </a>
-            <span>
+            <div>
               <TheCartIcon 
                 @showCart="showCart"
                 :itemCount="CART.length"/>
-            </span>
+            </div>
             <a href="">
               <i class="fa fa-search" aria-hidden="true"></i>
             </a>
           </div>
         </div>
       </nav>
+      
     </div>
     <TheCartVue 
       @closeCart="closeCart" 

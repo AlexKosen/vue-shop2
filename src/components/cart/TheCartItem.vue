@@ -62,10 +62,23 @@ export default {
     box-shadow: 0 0 8px 0;
     padding: 10px;
     margin: 10px 5px;
+    overflow: hidden;
+    @media (max-width: 360px) {
+        flex-direction: column;
+    }
     &__image {
         max-width: 60px;
         @media (max-width: 480px) {
             margin: 0 15px 0 4px;
+        }
+        @media (max-width: 360px) {
+            text-align: center;
+            margin: 15px 0;
+        }
+    }
+    &__info {
+        @media (max-width: 360px) {
+            text-align: center;
         }
     }
     &__info p span {
@@ -73,6 +86,9 @@ export default {
     }
     &__quantity {
         text-align: center;
+        & p {
+            margin: 2px;
+        }
     }
     .quantity {
         display: flex;
@@ -92,6 +108,10 @@ export default {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     border: 1px solid #f0d43a;
+    @media (max-width: 360px) {
+        padding: 1px 10px;
+        margin: 15px 0;
+        }
     &:hover {
         background-color: #f8b22f;
         border: 1px solid #f8b22f;

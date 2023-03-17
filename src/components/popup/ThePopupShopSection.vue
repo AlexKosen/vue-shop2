@@ -93,6 +93,10 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 360px) {
+       flex-direction: column;
+       text-align: center;
+        }
   }
   &__content {
     display: flex;
@@ -129,6 +133,9 @@ export default {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     border: 1px solid #f0d43a;
+    @media (max-width: 360px) {
+      display: none;
+        }
   }
   .sabmit_btn:hover {
     background-color: #f8b22f;

@@ -121,6 +121,11 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 360px) {
+       flex-direction: column;
+       text-align: center;
+       padding: 15px 0;
+        }
   }
   &__content {
     display: flex;

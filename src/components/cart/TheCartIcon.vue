@@ -29,6 +29,9 @@
     &:hover {
       cursor: pointer;
     }
+    @media (max-width: 992px) {
+      margin-left: 0;
+    }
   }
   
   .cart-count {
