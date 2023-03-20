@@ -21,7 +21,7 @@
       "category": "SmartWatch",
       "color": "olive",
       "statusNovetely": true,
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc." 
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc."
     },
     {
       "image": "w3.png",
@@ -77,6 +77,20 @@
       "color": "black",
       "statusNovetely": false,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc."
+    }
+  ],
+  "check_out_cart": [
+    {
+      "article": "SW3",
+      "available": true,
+      "category": "SmartWatch",
+      "color": "salmon",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc.",
+      "image": "w3.png",
+      "name": "Smartwatch SAL",
+      "price": 150,
+      "statusNovetely": false,
+      "quantity": 1
     }
   ]
 }

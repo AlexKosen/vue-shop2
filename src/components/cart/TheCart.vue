@@ -33,7 +33,8 @@ export default {
 },
   methods: {
     ...mapActions([
-    "INCREMENT_TO_CART_ITEM", "DECREMENT_TO_CART_ITEM", "DELETE_FROM_CART"
+    "INCREMENT_TO_CART_ITEM", "DECREMENT_TO_CART_ITEM", "DELETE_FROM_CART",
+    "CHECKOUT_FROM_CART"
     ]),
     closeCart() {
       this.$emit("closeCart");
@@ -46,6 +47,11 @@ export default {
     },
     decrement(index) {
       this.DECREMENT_TO_CART_ITEM(index)
+    },
+    checkOutCart() {
+      this.closeCart();
+      this.CHECKOUT_FROM_CART(this.CART)
+      alert("Your order has been successfully placed!")
     }
   },
 
@@ -80,7 +86,9 @@ export default {
       </div>
       <div class="the-popup__footer">
         <h4>Total: ${{ cartTotalCost }}</h4>
-        <button class="the-popup__footer-btn">Сheckout</button>
+        <button class="the-popup__footer-btn"
+        @click="checkOutCart"
+        >Сheckout</button>
       </div>
     </div>
   </div>

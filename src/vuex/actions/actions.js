@@ -28,5 +28,13 @@ export default {
 
   DELETE_FROM_CART({commit}, index) {
     commit("REMOVE_CART", index)
+  },
+  CHECKOUT_FROM_CART({commit}, cart) {
+    return axios
+    .post("http://localhost:3000/check_out_cart", cart)
+    .then((cart) => {
+      commit("CHECKOUT_CART")
+    })
+    
   }
 };

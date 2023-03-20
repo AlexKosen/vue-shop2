@@ -32,5 +32,9 @@ export default {
 
   REMOVE_CART: (state, index) => {
     state.cart.splice(index, 1)
+  },
+
+  CHECKOUT_CART: (state) => {
+    state.cart.length = 0
   }
 };
