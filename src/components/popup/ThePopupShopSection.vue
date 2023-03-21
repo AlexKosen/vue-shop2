@@ -49,7 +49,6 @@ export default {
         <slot></slot>
       </div>
       <div class="the-popup__footer">
-        <button class="close-modal btn" @click="closePopup">Close</button>
         <button class="sabmit_btn btn" @click="addToCart">
           {{ rightBtnTitle }}
         </button>
@@ -114,6 +113,7 @@ export default {
   }
   .sabmit_btn {
     display: inline-block;
+    margin: 0 auto;
     padding: 10px 45px;
     background-color: #f0d43a;
     color: #ffffff;
@@ -122,20 +122,6 @@ export default {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     border: 1px solid #f0d43a;
-  }
-  .close-modal {
-    display: inline-block;
-    padding: 10px 45px;
-    background-color: #f0d43a;
-    color: #ffffff;
-    font-size: 1rem;
-    border-radius: 5px;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    border: 1px solid #f0d43a;
-    @media (max-width: 360px) {
-      display: none;
-        }
   }
   .sabmit_btn:hover {
     background-color: #f8b22f;

@@ -101,21 +101,22 @@ export default {
    .the-cart-item__btn-delete {
     display: inline-block;
     padding: 4px 15px;
-    background-color: #f0d43a;
+    background-color: #b8b6ac;
     color: #ffffff;
     font-size: 0.8rem;
     border-radius: 5px;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-    border: 1px solid #f0d43a;
+    border: none;
+    margin: 0 10px;
     @media (max-width: 360px) {
         padding: 1px 10px;
         margin: 15px 0;
         }
     &:hover {
-        background-color: #f8b22f;
-        border: 1px solid #f8b22f;
-        color: #ffffff;
+        background-color: #ddd6c7;
+        border: none;
+        color: #6d6d6d;
     }
   }    
 }

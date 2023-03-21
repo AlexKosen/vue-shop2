@@ -81,15 +81,15 @@
   ],
   "check_out_cart": [
     {
-      "article": "SW3",
+      "article": "SW2",
       "available": true,
       "category": "SmartWatch",
-      "color": "salmon",
+      "color": "olive",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec metus vestibulum, tincidunt odio eu, porttitor velit. Vivamus sapien nunc.",
-      "image": "w3.png",
-      "name": "Smartwatch SAL",
-      "price": 150,
-      "statusNovetely": false,
+      "image": "w2.png",
+      "name": "Smartwatch SWOL",
+      "price": 175,
+      "statusNovetely": true,
       "quantity": 1
     }
   ]
